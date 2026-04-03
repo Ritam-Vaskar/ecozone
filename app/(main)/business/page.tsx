@@ -1,12 +1,10 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, BarChart2, CheckCircle, FileText, LineChart, Recycle, Upload } from "lucide-react"
+import { BarChart2, CheckCircle, FileText, LineChart, Recycle, Upload } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { BusinessAnalysisSection } from "@/components/business-analysis/BusinessAnalysisSection"
 
 export default function BusinessPage() {
   return (
@@ -101,64 +99,7 @@ export default function BusinessPage() {
         </div>
       </section>
 
-      {/* Quick Start */}
-      <section className="bg-green-50 py-12 md:py-24">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-4">Get Started in Minutes</h2>
-            <p className="text-gray-600 md:text-xl">
-              Try our quick analysis tool to get a taste of what Ecozon can do for your business.
-            </p>
-          </div>
-
-          <div className="max-w-2xl mx-auto">
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle>Quick Business Analysis</CardTitle>
-                <CardDescription>
-                  Enter your website URL or upload a sample of your business data to get initial insights.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Tabs defaultValue="url" className="w-full">
-                  <TabsList className="grid grid-cols-2 mb-6">
-                    <TabsTrigger value="url">Website URL</TabsTrigger>
-                    <TabsTrigger value="upload">Upload Data</TabsTrigger>
-                  </TabsList>
-                  <TabsContent value="url" className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="website-url">Your Business Website</Label>
-                      <Input id="website-url" placeholder="https://yourbusiness.com" />
-                      <p className="text-sm text-gray-500">
-                        We'll scan your website to understand your business and provide initial recommendations.
-                      </p>
-                    </div>
-                    <Button className="w-full">
-                      Analyze Website <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </TabsContent>
-                  <TabsContent value="upload" className="space-y-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="data-file">Upload Business Data</Label>
-                      <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center">
-                        <Upload className="h-8 w-8 mx-auto mb-4 text-gray-400" />
-                        <p className="text-sm text-gray-500 mb-2">Drag and drop your CSV, Excel, or JSON files here</p>
-                        <p className="text-xs text-gray-400">Supported formats: .csv, .xlsx, .json</p>
-                        <Button variant="outline" size="sm" className="mt-4">
-                          Browse Files
-                        </Button>
-                      </div>
-                    </div>
-                    <Button className="w-full">
-                      Analyze Data <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </TabsContent>
-                </Tabs>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <BusinessAnalysisSection />
 
       {/* Features */}
       <section className="container py-12 md:py-24">
